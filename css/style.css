@@ -23,9 +23,10 @@ img {
   height: 400px;
 }
 
-#board > section {
+#board > button {
   width: 33.33%;
   height: 33.33%;
+  background: #fff;
   border: 1px solid black;
   font-size: 5rem;
   text-align: center;

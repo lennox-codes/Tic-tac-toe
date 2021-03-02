@@ -35,11 +35,11 @@ const ticTacToe = {
 
   checkWin: function () {
     for (let i = 0; i < this.winConditions.length; i++) {
-      let a = this.boardState[this.winConditions[i][0]];
-      let b = this.boardState[this.winConditions[i][1]];
-      let c = this.boardState[this.winConditions[i][2]];
-      if (a == "" || b == "" || c == "") continue;
-      if (a == b && b == c) return true;
+      let firstIndex = this.boardState[this.winConditions[i][0]];
+      let secondIndex = this.boardState[this.winConditions[i][1]];
+      let thirdIndex = this.boardState[this.winConditions[i][2]];
+      if (firstIndex == "" || secondIndex == "" || thirdIndex == "") continue;
+      if (firstIndex == secondIndex && thirdIndex == c) return true;
     }
     return false;
   },
@@ -64,6 +64,11 @@ function playGame(e) {
     if (ticTacToe.checkWin()) {
       gameResult.textContent = `Player ${ticTacToe.currentPlayer} has won the game.
       `;
+      Array.from(e.currentTarget.childNodes).forEach((child) => {
+        child.disabled = true;
+        child.style.color = "darkgrey";
+        child.style.background = "grey";
+      });
     }
     console.log(ticTacToe);
   }
