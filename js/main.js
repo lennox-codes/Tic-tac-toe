@@ -70,10 +70,5 @@ function playGame(e) {
         child.style.background = "grey";
       });
     }
-    console.log(ticTacToe);
   }
 }
-
-//Consider making the game more efficient such that the values don't change even in the DOM when they are clicked again
-
-//Also if I do use a class for this, then I can make a reset game function and then just revert things back to the way they once were before the game began.
